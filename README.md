@@ -1,36 +1,27 @@
 # Skazka Android Core
 
-**RU:** Базовые Android-компоненты, которые нужны нескольким приложениям Skazka.
+> RU — основной язык · EN — required second language
 
-**EN:** Shared Android building blocks used by more than one Skazka app.
+## RU
 
-## Что здесь будет / What belongs here
+Общие Android-компоненты Skazka: базовые контракты, фоновые задачи, device-интеграции, диагностика и другие небольшие переиспользуемые части.
 
-- network и fallback-клиент
-- background/job primitives
-- telemetry/diagnostics contracts
-- localization RU/EN
-- notification primitives
-- device helpers, включая общий Screen Awake Core
-- общие Android contracts
+**Текущий статус:** репозиторий создан как целевая граница модуля. Рабочий код переносится из существующих проектов поэтапно, с тестами и без копирования project-specific зависимостей.
 
-## Граница / Boundary
+**Граница модуля:** network/storage/sync/background/telemetry/localization/notifications/device — только те части, которые действительно остаются общими.
 
-Хранилище, синхронизация и backup живут в skazka-data; медиадвижки — в skazka-media. Production-серверная логика сюда не переносится.
+Перед первым стабильным релизом здесь появятся собственные versioning, тесты, changelog и лицензия. До выбора лицензии публикация кода не означает автоматическое разрешение на его повторное использование.
 
-## Статус / Status
+## EN
 
-Миграция началась. Репозиторий уже выделен из общей архитектуры Skazka, но рабочий код переносится небольшими проверяемыми шагами. Пока API не помечен как stable, совместимость между версиями не гарантируется.
+Shared Android components for Skazka: base contracts, background work, device integrations, diagnostics, and other small reusable building blocks.
 
-Migration has started. The repository is separated at the architecture level, while working code is being moved in small, verifiable steps. Until an API is marked stable, compatibility between versions is not guaranteed.
+**Current status:** this repository is the target module boundary. Working code is being extracted from existing projects incrementally, with tests and without copying project-specific dependencies.
 
-## Принципы / Principles
+**Module boundary:** network/storage/sync/background/telemetry/localization/notifications/device — только те части, которые действительно остаются общими.
 
-- RU — основной язык, EN — обязательный второй.
-- Публичный код не содержит ключей, production-конфигурации, приватных маршрутов или закрытых endpoints.
-- Общая логика не должна знать о конкретном приложении больше, чем требуется её публичному API.
-- Исправление в общем модуле должно быть пригодно для всех клиентов Skazka, которые его подключают.
+Before the first stable release, this repository will get its own versioning, tests, changelog, and license. Until a license is selected, publishing the source does not automatically grant reuse rights.
 
----
+## Development rules / Правила разработки
 
-Skazka is built as a set of small reusable components instead of one growing monolith.
+See [DEVELOPMENT_RULES.md](DEVELOPMENT_RULES.md).
