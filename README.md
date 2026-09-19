@@ -28,6 +28,12 @@ Shared Android components that are genuinely reusable across Skazka applications
 
 Verified on HOSTKEY: Android Core self-test — PASS; `screen-awake-core:build` — PASS; `telemetry-core:build` — PASS; `screen-awake-android:assembleDebug` — PASS; `screen-awake-android:lintDebug` — PASS.
 
+## Design canon / Канон дизайна
+
+Визуальный источник истины вынесен отдельно в `kroxaboom-sudo/skazka-design-system` и версионируется как `SKAZKA-DESIGN-1.0`. Android Core может предоставлять технические реализации компонентов, но не переопределяет цвета, иконки, типографику, геометрию или responsive-правила канона.
+
+The visual source of truth lives in `kroxaboom-sudo/skazka-design-system` and is versioned as `SKAZKA-DESIGN-1.0`. Android Core may provide technical component implementations, but it does not redefine canonical colors, icons, typography, geometry or responsive behavior.
+
 ## Coordinates / Координаты
 
 - `com.kroxaboom.skazka:screen-awake-core:0.1.0-preview`
