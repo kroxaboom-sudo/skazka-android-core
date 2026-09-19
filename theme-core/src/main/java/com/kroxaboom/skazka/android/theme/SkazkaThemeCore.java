@@ -15,14 +15,14 @@ public final class SkazkaThemeCore {
 
     private static final ThemePalette SIGNATURE_DARK_PALETTE = new ThemePalette(
             0xff0b0b13, 0xff131522, 0xff1b1f30,
-            0xff8e6af1, 0xff633acc, 0xff5b8cff, 0xffffffff,
+            0xff8e6af1, 0xff633acc, 0xff5b8cff, 0xff0b0b13,
             0xfff4f2ff, 0xffb8b5c9, 0xffff6b7a, 0xfff0be5a,
             0xff4fd6a4, 0xff242738, 0xff34384a, 0xff6d7080,
             0xff8e6af1, 0xff5b8cff, 0x668e6af1);
 
     private static final ThemePalette SIGNATURE_OLED_PALETTE = new ThemePalette(
-            0xff000000, 0xff050508, 0xff0e1019,
-            0xff9a7af5, 0xff6a43d4, 0xff6695ff, 0xffffffff,
+            0xff000000, 0xff000000, 0xff0e1019,
+            0xff9a7af5, 0xff6a43d4, 0xff6695ff, 0xff000000,
             0xfffbfaff, 0xffc0bdcf, 0xffff7180, 0xfff2c56a,
             0xff57dcae, 0xff171925, 0xff25283a, 0xff707383,
             0xff9a7af5, 0xff6695ff, 0x668e6af1);
