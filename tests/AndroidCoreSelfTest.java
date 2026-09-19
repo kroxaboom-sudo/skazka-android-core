@@ -3,6 +3,8 @@ import com.kroxaboom.skazka.android.awake.ScreenAwakeState;
 import com.kroxaboom.skazka.android.awake.ScreenAwakeStateMachine;
 import com.kroxaboom.skazka.android.telemetry.TelemetryEvent;
 import com.kroxaboom.skazka.android.telemetry.TelemetryQueuePolicy;
+import com.kroxaboom.skazka.android.theme.SkazkaThemeCore;
+import com.kroxaboom.skazka.android.theme.ThemePalette;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -15,6 +17,7 @@ public final class AndroidCoreSelfTest {
     public static void main(String[] args) {
         screenAwakePolicy();
         telemetryPolicy();
+        themePolicy();
         System.out.println("PASS: Skazka Android Core screen-awake and telemetry policies");
     }
 
@@ -119,6 +122,16 @@ public final class AndroidCoreSelfTest {
                 id + "-time",
                 Map.of("value", 1)
         );
+    }
+
+    private static void themePolicy() {
+        ThemePalette dark = SkazkaThemeCore.resolve(SkazkaThemeCore.DARK, false);
+        check(dark.primary == 0xff8e6af1, "signature primary");
+        check(dark.primaryStrong == 0xff633acc, "signature primary strong");
+        check(SkazkaThemeCore.resolve(SkazkaThemeCore.OLED, false).background == 0xff000000,
+                "signature oled black");
+        check(SkazkaThemeCore.signature(SkazkaThemeCore.SYSTEM, true),
+                "system dark signature");
     }
 
     private static void check(boolean condition, String message) {
